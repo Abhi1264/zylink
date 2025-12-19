@@ -15,7 +15,7 @@ export default function Page() {
         <div className="container mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link2 size={20} className="sm:w-6 sm:h-6 text-neutral-900 dark:text-neutral-50" strokeWidth={2} />
-            <span className="text-base sm:text-lg font-semibold tracking-precise">MonoLink</span>
+            <span className="text-base sm:text-lg font-semibold tracking-precise">Solo Link</span>
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
             <ThemeToggle />
@@ -158,10 +158,10 @@ export default function Page() {
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <div className="flex items-center justify-center gap-2 mb-2 sm:mb-3">
             <Link2 size={18} className="sm:w-5 sm:h-5 text-neutral-900 dark:text-neutral-50" />
-            <span className="text-sm sm:text-base font-semibold">MonoLink</span>
+            <span className="text-sm sm:text-base font-semibold">Solo Link</span>
           </div>
           <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-500">
-            &copy; 2025 MonoLink. Built with precision.
+            &copy; 2025 Solo Link. Built with precision.
           </p>
         </div>
       </footer>

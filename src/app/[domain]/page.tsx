@@ -46,16 +46,16 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${data.user.name} | MonoLink`,
+    title: `${data.user.name} | Solo Link`,
     description: `Check out ${data.user.name}'s links`,
     openGraph: {
-      title: `${data.user.name} | MonoLink`,
+      title: `${data.user.name} | Solo Link`,
       description: `Check out ${data.user.name}'s links`,
       images: data.user.image ? [{ url: data.user.image }] : [],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${data.user.name} | MonoLink`,
+      title: `${data.user.name} | Solo Link`,
       description: `Check out ${data.user.name}'s links`,
       images: data.user.image ? [data.user.image] : [],
     },
@@ -160,7 +160,7 @@ export default async function ProfilePage({ params }: PageProps) {
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-sm hover-lift-subtle transition-all text-xs sm:text-sm">
             <span className="text-neutral-500">Powered by</span>
             <Link2 size={12} className="sm:w-3.5 sm:h-3.5" strokeWidth={1.5} />
-            <span className="font-semibold">MonoLink</span>
+            <span className="font-semibold">Solo Link</span>
           </div>
         </footer>
       </div>

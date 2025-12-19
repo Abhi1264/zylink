@@ -65,7 +65,7 @@ export function LoginForm() {
         className="fixed top-6 left-6 flex items-center gap-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors z-10"
       >
         <Link2 size={20} strokeWidth={1.5} />
-        <span className="text-sm font-medium">MonoLink</span>
+        <span className="text-sm font-medium">Solo Link</span>
       </Link>
 
       {/* Theme Toggle */}
@@ -192,7 +192,7 @@ export function LoginForm() {
 
           {/* Sign Up Link */}
           <div className="pt-4 text-center text-sm border-t border-neutral-200 dark:border-neutral-800">
-            <span className="text-neutral-600 dark:text-neutral-400">New to MonoLink? </span>
+            <span className="text-neutral-600 dark:text-neutral-400">New to Solo Link? </span>
             <Link href="/signup" className="font-medium hover:underline">
               Create account
             </Link>

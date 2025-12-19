@@ -1,6 +1,6 @@
-# Contributing to MonoLink
+# Contributing to Solo Link
 
-Thank you for your interest in contributing to MonoLink! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to Solo Link! This document provides guidelines and instructions for contributing.
 
 ## Code of Conduct
 
@@ -43,7 +43,7 @@ For feature requests, open an issue with:
 1. **Fork the repository**
 
 ```bash
-gh repo fork your-username/mono-link --clone
+gh repo fork your-username/sololink --clone
 ```
 
 2. **Create a branch**
@@ -230,4 +230,4 @@ Contributors will be:
 
 ## Thank You!
 
-Your contributions make MonoLink better for everyone. We appreciate your time and effort! 🎉
+Your contributions make Solo Link better for everyone. We appreciate your time and effort! 🎉

@@ -8,7 +8,7 @@ const googleSans = Google_Sans({ variable: "--font-sans" });
 const googleSansCode = Google_Sans_Code({ variable: "--font-code" });
 
 export const metadata: Metadata = {
-  title: "MonoLink - Your Link in Bio",
+  title: "Solo Link - Your Link in Bio",
   description: "Create your personalized link in bio page",
 };
 

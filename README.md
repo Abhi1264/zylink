@@ -1,4 +1,4 @@
-# MonoLink
+# Solo Link
 
 A production-ready, open-source Linktree alternative with dynamic subdomains, drag-and-drop link management, and built-in analytics.
 
@@ -49,7 +49,7 @@ For detailed setup instructions, see [`SETUP.md`](./SETUP.md).
 ## Project Structure
 
 ```
-mono-link/
+sololink/
 ├── src/
 │   ├── app/
 │   │   ├── [domain]/          # Public profile pages (subdomain route)
@@ -106,7 +106,7 @@ Renders public profile
 
 ## Deployment
 
-MonoLink can be deployed to:
+Solo Link can be deployed to:
 
 - **Vercel** (Recommended) - Easiest setup with automatic CI/CD
 - **Netlify** - Great alternative with generous free tier

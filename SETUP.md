@@ -1,6 +1,6 @@
-# MonoLink Setup & Deployment Guide
+# Solo Link Setup & Deployment Guide
 
-Complete guide for setting up MonoLink locally and deploying to production.
+Complete guide for setting up Solo Link locally and deploying to production.
 
 ## Table of Contents
 
@@ -69,7 +69,7 @@ Create your first account and start adding links!
 1. Go to [supabase.com](https://supabase.com) and sign up
 2. Click "New Project"
 3. Fill in project details:
-   - **Name**: monolink (or your choice)
+   - **Name**: Solo Link (or your choice)
    - **Database Password**: Generate a strong password
    - **Region**: Choose closest to you
 4. Wait for project creation (~2 minutes)
@@ -520,7 +520,7 @@ services:
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_USER: postgres
-      POSTGRES_DB: monolink
+      POSTGRES_DB: Solo Link
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
@@ -903,4 +903,4 @@ Need help?
 
 ---
 
-**Good luck with your MonoLink deployment! 🚀**
+**Good luck with your Solo Link deployment! 🚀**

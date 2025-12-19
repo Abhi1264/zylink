@@ -48,7 +48,7 @@ export function DashboardShell({ user, links, stats }: DashboardShellProps) {
                 <Link2 size={16} className="text-neutral-50 dark:text-neutral-900" strokeWidth={2} />
               </div>
               <span className={`font-semibold text-lg tracking-precise transition-opacity duration-300 ${sidebarCollapsed ? 'lg:opacity-0 lg:hidden' : 'opacity-100'}`}>
-                MonoLink
+                Solo Link
               </span>
             </div>
             
