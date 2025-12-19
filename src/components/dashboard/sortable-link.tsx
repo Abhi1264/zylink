@@ -58,10 +58,10 @@ export function SortableLink({ link }: SortableLinkProps) {
         !isEnabled ? "opacity-50" : ""
       }`}
     >
-      <div className="p-4 flex items-center gap-3">
+      <div className="p-3 sm:p-4 flex items-center gap-2 sm:gap-3">
         {/* Drag Handle */}
         <button
-          className="cursor-grab active:cursor-grabbing touch-none p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition-colors"
+          className="cursor-grab active:cursor-grabbing touch-none p-1.5 sm:p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition-colors"
           {...attributes}
           {...listeners}
         >
@@ -77,17 +77,17 @@ export function SortableLink({ link }: SortableLinkProps) {
           <h3 className="font-semibold text-sm mb-0.5 truncate tracking-precise">
             {link.title}
           </h3>
-          <div className="flex items-center gap-3 text-xs text-neutral-500">
-            <span className="mono-meta truncate">{hostname}</span>
-            <span>·</span>
-            <span className="mono-meta">{link.clicks} clicks</span>
+          <div className="flex items-center gap-2 text-xs text-neutral-500">
+            <span className="mono-meta truncate max-w-[100px] sm:max-w-[200px]">{hostname}</span>
+            <span className="hidden xs:inline">·</span>
+            <span className="mono-meta whitespace-nowrap">{link.clicks}</span>
           </div>
         </div>
 
         {/* Status & Actions */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-0.5 sm:gap-1">
           <div
-            className={`px-2 py-1 rounded-md text-xs font-medium ${
+            className={`hidden sm:block px-2 py-1 rounded-md text-xs font-medium ${
               isEnabled
                 ? "bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400"
                 : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400"
@@ -104,9 +104,9 @@ export function SortableLink({ link }: SortableLinkProps) {
             title={isEnabled ? "Hide link" : "Show link"}
           >
             {isEnabled ? (
-              <Eye size={16} strokeWidth={1.5} />
+              <Eye size={16} strokeWidth={1.5} className="text-green-600" />
             ) : (
-              <EyeOff size={16} strokeWidth={1.5} />
+              <EyeOff size={16} strokeWidth={1.5} className="text-neutral-400" />
             )}
           </Button>
 

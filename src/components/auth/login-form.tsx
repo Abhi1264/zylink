@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Card } from '@/components/ui/card';
 import { Link2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export function LoginForm() {
   const router = useRouter();
@@ -66,6 +67,11 @@ export function LoginForm() {
         <Link2 size={20} strokeWidth={1.5} />
         <span className="text-sm font-medium">MonoLink</span>
       </Link>
+
+      {/* Theme Toggle */}
+      <div className="fixed top-6 right-6 z-10">
+        <ThemeToggle />
+      </div>
 
       <Card className="w-full max-w-md border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-sm relative z-10">
         <div className="p-8 md:p-10 space-y-8">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Google_Sans, Google_Sans_Code } from "next/font/google";
 import "./globals.css";
 import { PostHogProvider } from "@/lib/analytics/posthog";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const googleSans = Google_Sans({ variable: "--font-sans" });
 const googleSansCode = Google_Sans_Code({ variable: "--font-code" });
@@ -17,11 +18,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={googleSans.variable}>
+    <html lang="en" className={googleSans.variable} suppressHydrationWarning>
       <body className={`${googleSans.variable} ${googleSansCode.variable} antialiased`}>
-        <PostHogProvider>
-          {children}
-        </PostHogProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <PostHogProvider>
+            {children}
+          </PostHogProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

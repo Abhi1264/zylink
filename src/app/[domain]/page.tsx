@@ -6,6 +6,7 @@ import { ProfileLink } from "@/components/profile/profile-link";
 import { Metadata } from "next";
 import Image from "next/image";
 import { Link2 } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 interface PageProps {
   params: Promise<{ domain: string }>;
@@ -75,15 +76,20 @@ export default async function ProfilePage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 noise-bg relative">
       {/* Dot Pattern */}
-      <div className="fixed inset-0 dot-pattern dark:dot-pattern-dark pointer-events-none opacity-50" />
+      <div className="fixed inset-0 dot-pattern dark:dot-pattern-dark pointer-events-none opacity-10" />
 
-      <div className="container max-w-5xl mx-auto px-6 py-12 md:py-20 relative">
+      {/* Theme Toggle */}
+      <div className="fixed top-6 right-6 z-10">
+        <ThemeToggle />
+      </div>
+
+      <div className="container max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20 relative">
         {/* Profile Header */}
-        <header className="text-center mb-12 space-y-6">
+        <header className="text-center mb-8 sm:mb-12 space-y-4 sm:space-y-6">
           {/* Avatar */}
           {data.user.image ? (
             <div className="relative inline-block">
-              <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-neutral-200 dark:border-neutral-800 shadow-sm">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-neutral-200 dark:border-neutral-800 shadow-sm">
                 <Image
                   src={data.user.image}
                   alt={data.user.name}
@@ -95,8 +101,8 @@ export default async function ProfilePage({ params }: PageProps) {
             </div>
           ) : (
             <div className="relative inline-block">
-              <div className="w-24 h-24 rounded-full bg-neutral-900 dark:bg-neutral-50 border-2 border-neutral-200 dark:border-neutral-800 flex items-center justify-center shadow-sm">
-                <span className="text-4xl font-bold text-neutral-50 dark:text-neutral-900 mono-meta">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-neutral-900 dark:bg-neutral-50 border-2 border-neutral-200 dark:border-neutral-800 flex items-center justify-center shadow-sm">
+                <span className="text-3xl sm:text-4xl font-bold text-neutral-50 dark:text-neutral-900 mono-meta">
                   {data.user.name.charAt(0).toUpperCase()}
                 </span>
               </div>
@@ -104,14 +110,14 @@ export default async function ProfilePage({ params }: PageProps) {
           )}
 
           {/* Name & Stats */}
-          <div className="space-y-3">
-            <h1 className="text-4xl md:text-5xl font-bold heading-tight">
+          <div className="space-y-2 sm:space-y-3">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold heading-tight">
               @{data.user.name}
             </h1>
             
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-sm">
               <Link2 size={14} strokeWidth={1.5} />
-              <span className="text-sm mono-meta">
+              <span className="text-xs sm:text-sm mono-meta">
                 {data.links.length} {data.links.length === 1 ? "link" : "links"}
               </span>
             </div>
@@ -120,7 +126,7 @@ export default async function ProfilePage({ params }: PageProps) {
 
         {/* Bento Grid Links */}
         {data.links.length > 0 ? (
-          <div className="bento-grid mb-12">
+          <div className="bento-grid mb-8 sm:mb-12">
             {/* Featured Link (first one, spans 2 columns on desktop) */}
             {firstLink && (
               <div className="bento-span-2">
@@ -138,11 +144,11 @@ export default async function ProfilePage({ params }: PageProps) {
             ))}
           </div>
         ) : (
-          <div className="border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 rounded-tight p-16 text-center shadow-sm">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center">
-              <Link2 size={28} className="text-neutral-400" strokeWidth={1.5} />
+          <div className="border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 rounded-tight p-12 sm:p-16 text-center shadow-sm">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 rounded-full bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center">
+              <Link2 size={24} className="sm:w-7 sm:h-7 text-neutral-400" strokeWidth={1.5} />
             </div>
-            <h3 className="text-lg font-semibold mb-2">No links yet</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-2">No links yet</h3>
             <p className="text-sm text-neutral-500 dark:text-neutral-500">
               Check back soon!
             </p>
@@ -150,11 +156,11 @@ export default async function ProfilePage({ params }: PageProps) {
         )}
 
         {/* Footer */}
-        <footer className="text-center pt-12 space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-sm hover-lift-subtle transition-all">
-            <span className="text-xs text-neutral-500">Powered by</span>
-            <Link2 size={14} strokeWidth={1.5} />
-            <span className="text-xs font-semibold">MonoLink</span>
+        <footer className="text-center pt-8 sm:pt-12 space-y-2 sm:space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-sm hover-lift-subtle transition-all text-xs sm:text-sm">
+            <span className="text-neutral-500">Powered by</span>
+            <Link2 size={12} className="sm:w-3.5 sm:h-3.5" strokeWidth={1.5} />
+            <span className="font-semibold">MonoLink</span>
           </div>
         </footer>
       </div>

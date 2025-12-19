@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link2, GripVertical, BarChart3, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Page() {
   return (
@@ -11,20 +12,21 @@ export default function Page() {
 
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-sm">
-        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="container mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Link2 size={24} className="text-neutral-900 dark:text-neutral-50" strokeWidth={2} />
-            <span className="text-lg font-semibold tracking-precise">MonoLink</span>
+            <Link2 size={20} className="sm:w-6 sm:h-6 text-neutral-900 dark:text-neutral-50" strokeWidth={2} />
+            <span className="text-base sm:text-lg font-semibold tracking-precise">MonoLink</span>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <ThemeToggle />
             <Link href="/login">
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" className="h-8 sm:h-9 text-sm">
                 Sign In
               </Button>
             </Link>
             <Link href="/signup">
-              <Button size="sm" className="bg-neutral-900 dark:bg-neutral-50 text-neutral-50 dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200">
-                Get Started
+              <Button size="sm" className="h-8 sm:h-9 text-sm bg-neutral-900 dark:bg-neutral-50 text-neutral-50 dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200">
+                Start
               </Button>
             </Link>
           </div>
@@ -33,27 +35,27 @@ export default function Page() {
 
       <main className="relative">
         {/* Hero Section */}
-        <section className="container mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-sm">
+        <section className="container mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-16 sm:pb-20 md:pt-32 md:pb-28">
+          <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-sm text-xs sm:text-sm">
               <div className="status-dot bg-green-500" />
-              <span className="text-sm font-medium">Built for creators</span>
+              <span className="font-medium">Built for creators</span>
             </div>
             
-            <h1 className="text-6xl md:text-7xl font-bold heading-tight text-neutral-900 dark:text-neutral-50">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold heading-tight text-neutral-900 dark:text-neutral-50 px-4">
               One Link.
               <br />
               Everything Connected.
             </h1>
             
-            <p className="text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed px-4">
               A sophisticated link management platform designed for professionals 
               who value precision and clarity.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-              <Link href="/signup">
-                <Button size="lg" className="h-12 px-8 bg-neutral-900 dark:bg-neutral-50 text-neutral-50 dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 shadow-hover">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 pt-4 sm:pt-6 px-4">
+              <Link href="/signup" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto h-11 sm:h-12 px-6 sm:px-8 bg-neutral-900 dark:bg-neutral-50 text-neutral-50 dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 shadow-hover">
                   Create Your Profile
                   <ArrowRight size={18} className="ml-2" />
                 </Button>
@@ -61,17 +63,17 @@ export default function Page() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-16 max-w-2xl mx-auto">
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-12 sm:pt-16 max-w-2xl mx-auto px-4">
               {[
                 { label: 'Active Users', value: '10,000+', mono: false },
                 { label: 'Total Clicks', value: '1.2M+', mono: true },
                 { label: 'Uptime', value: '99.9%', mono: true }
               ].map((stat) => (
-                <div key={stat.label} className="space-y-2">
-                  <div className={`text-3xl font-bold ${stat.mono ? 'mono-meta' : ''}`}>
+                <div key={stat.label} className="space-y-1 sm:space-y-2">
+                  <div className={`text-xl sm:text-2xl md:text-3xl font-bold ${stat.mono ? 'mono-meta' : ''}`}>
                     {stat.value}
                   </div>
-                  <div className="text-sm text-neutral-500 dark:text-neutral-500">
+                  <div className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-500">
                     {stat.label}
                   </div>
                 </div>
@@ -81,18 +83,18 @@ export default function Page() {
         </section>
 
         {/* Features Grid */}
-        <section className="container mx-auto px-6 py-20">
+        <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-20">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16 space-y-3">
-              <h2 className="text-4xl font-bold heading-tight">
+            <div className="text-center mb-12 sm:mb-16 space-y-2 sm:space-y-3 px-4">
+              <h2 className="text-3xl sm:text-4xl font-bold heading-tight">
                 Built for Scale
               </h2>
-              <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
                 Enterprise-grade features in a simple, elegant interface
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
               {[
                 {
                   icon: Link2,
@@ -112,13 +114,13 @@ export default function Page() {
               ].map((feature) => (
                 <Card 
                   key={feature.title} 
-                  className="p-6 border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover-lift-subtle border-focus shadow-sm"
+                  className="p-5 sm:p-6 border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover-lift-subtle border-focus shadow-sm"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center mb-5">
-                    <feature.icon size={24} className="text-neutral-900 dark:text-neutral-50" strokeWidth={1.5} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center mb-4 sm:mb-5">
+                    <feature.icon size={20} className="sm:w-6 sm:h-6 text-neutral-900 dark:text-neutral-50" strokeWidth={1.5} />
                   </div>
                   
-                  <h3 className="text-lg font-semibold mb-2 tracking-precise">
+                  <h3 className="text-base sm:text-lg font-semibold mb-2 tracking-precise">
                     {feature.title}
                   </h3>
                   
@@ -132,17 +134,17 @@ export default function Page() {
         </section>
 
         {/* CTA Section */}
-        <section className="container mx-auto px-6 py-20 mb-20">
-          <Card className="max-w-4xl mx-auto p-12 md:p-16 border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-sm text-center">
-            <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold heading-tight">
+        <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-20 mb-16 sm:mb-20">
+          <Card className="max-w-4xl mx-auto p-8 sm:p-12 md:p-16 border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-sm text-center">
+            <div className="space-y-4 sm:space-y-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold heading-tight">
                 Ready to Start?
               </h2>
-              <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-xl mx-auto">
+              <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 max-w-xl mx-auto px-4">
                 Create your personalized link hub in under 60 seconds.
               </p>
-              <Link href="/signup">
-                <Button size="lg" className="h-12 px-10 bg-neutral-900 dark:bg-neutral-50 text-neutral-50 dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 shadow-hover mt-4">
+              <Link href="/signup" className="inline-block w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto h-11 sm:h-12 px-8 sm:px-10 bg-neutral-900 dark:bg-neutral-50 text-neutral-50 dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 shadow-hover mt-4">
                   Get Started Free
                 </Button>
               </Link>
@@ -152,13 +154,13 @@ export default function Page() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-neutral-200 dark:border-neutral-800 py-12 bg-white dark:bg-neutral-900">
-        <div className="container mx-auto px-6 text-center">
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <Link2 size={20} className="text-neutral-900 dark:text-neutral-50" />
-            <span className="font-semibold">MonoLink</span>
+      <footer className="border-t border-neutral-200 dark:border-neutral-800 py-8 sm:py-12 bg-white dark:bg-neutral-900">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
+          <div className="flex items-center justify-center gap-2 mb-2 sm:mb-3">
+            <Link2 size={18} className="sm:w-5 sm:h-5 text-neutral-900 dark:text-neutral-50" />
+            <span className="text-sm sm:text-base font-semibold">MonoLink</span>
           </div>
-          <p className="text-sm text-neutral-500 dark:text-neutral-500">
+          <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-500">
             &copy; 2025 MonoLink. Built with precision.
           </p>
         </div>
