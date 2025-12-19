@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Link2, GripVertical, BarChart3, ArrowRight } from "lucide-react";
+import { Link2, GripVertical, BarChart3, ArrowRight, Github } from "lucide-react";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -18,6 +18,15 @@ export default function Page() {
             <span className="text-base sm:text-lg font-semibold tracking-precise">Zylink</span>
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
+            <a
+              href="https://github.com/Abhi1264/zylink"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors"
+              aria-label="GitHub"
+            >
+              <Github size={20} strokeWidth={1.5} />
+            </a>
             <ThemeToggle />
             <Link href="/login">
               <Button variant="ghost" size="sm" className="h-8 sm:h-9 text-sm">
@@ -154,15 +163,26 @@ export default function Page() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-neutral-200 dark:border-neutral-800 py-8 sm:py-12 bg-white dark:bg-neutral-900">
-        <div className="container mx-auto px-4 sm:px-6 text-center">
-          <div className="flex items-center justify-center gap-2 mb-2 sm:mb-3">
-            <Link2 size={18} className="sm:w-5 sm:h-5 text-neutral-900 dark:text-neutral-50" />
-            <span className="text-sm sm:text-base font-semibold">Zylink</span>
+      <footer className="border-t border-neutral-200 dark:border-neutral-800 py-8 bg-white dark:bg-black opacity-100">
+        <div className="container mx-auto px-4 sm:px-6 flex justify-center">
+          <div className="flex flex-row items-center gap-8">
+            <div className="flex items-center gap-2">
+              <Link2 size={18} className="sm:w-5 sm:h-5 text-neutral-900 dark:text-neutral-50" />
+              <span className="text-sm sm:text-base font-semibold">Zylink</span>
+            </div>
+            <a
+              href="https://github.com/Abhi1264/zylink"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors text-sm"
+            >
+              <Github size={18} strokeWidth={1.5} />
+              <span>View on GitHub</span>
+            </a>
+            <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-500">
+              &copy; 2025 Zylink. Built with precision.
+            </p>
           </div>
-          <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-500">
-            &copy; 2025 Zylink. Built with precision.
-          </p>
         </div>
       </footer>
     </div>

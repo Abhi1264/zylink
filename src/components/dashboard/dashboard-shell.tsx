@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Link2, LayoutDashboard, ExternalLink, BarChart3, Settings, Menu, X, ChevronsLeft } from 'lucide-react';
+import { Link2, LayoutDashboard, ExternalLink, BarChart3, Settings, Menu, X, ChevronsLeft, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { SignOutButton } from './sign-out-button';
@@ -137,6 +137,15 @@ export function DashboardShell({ user, links, stats }: DashboardShellProps) {
             </div>
 
             <div className="flex items-center gap-2">
+              <a
+                href="https://github.com/Abhi1264/zylink"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors"
+                aria-label="GitHub"
+              >
+                <Github size={18} strokeWidth={1.5} />
+              </a>
               <ThemeToggle />
               <a
                 href={getProfileUrl(user.name)}
