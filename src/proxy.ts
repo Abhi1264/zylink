@@ -6,18 +6,24 @@ export function proxy(req: NextRequest) {
   const url = req.nextUrl.clone();
   const hostname = req.headers.get("host") || "";
 
+  const hostnameWithoutPort = hostname.split(":")[0];
+  const rootDomainWithoutPort = ROOT_DOMAIN.split(":")[0];
+
   const isRootDomain =
-    hostname === ROOT_DOMAIN || hostname === "localhost:3000";
+    hostnameWithoutPort === rootDomainWithoutPort ||
+    hostnameWithoutPort === "localhost";
 
   if (isRootDomain) {
     return NextResponse.next();
   }
 
-  const subdomain = hostname.replace(`.${ROOT_DOMAIN}`, "").split(":")[0];
-
-  if (subdomain && subdomain !== hostname.split(":")[0]) {
-    url.pathname = `/${subdomain}${url.pathname}`;
-    return NextResponse.rewrite(url);
+  if (hostnameWithoutPort.endsWith(`.${rootDomainWithoutPort}`)) {
+    const subdomain = hostnameWithoutPort.replace(`.${rootDomainWithoutPort}`, "");
+    
+    if (subdomain && subdomain !== hostnameWithoutPort) {
+      url.pathname = `/${subdomain}${url.pathname}`;
+      return NextResponse.rewrite(url);
+    }
   }
 
   return NextResponse.next();
